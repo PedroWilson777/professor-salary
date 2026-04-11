@@ -1,0 +1,40 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; }
+.brandDot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.brandName { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
+.brandSub { font-size: 12px; color: var(--text-3); font-weight: 400; }
+.version { font-size: 11px; color: var(--text-3); font-family: var(--font-mono); background: var(--surface2); padding: 3px 8px; border-radius: 99px; }
+.main { max-width: 1100px; margin: 0 auto; width: 100%; padding: 1.5rem; flex: 1; }
+.tabs { display: flex; gap: 4px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 4px; margin-bottom: 1.5rem; overflow-x: auto; }
+.tab { flex: 1; min-width: fit-content; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 12px; border-radius: var(--radius-sm); border: none; background: transparent; color: var(--text-2); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+.tab:hover { background: var(--surface2); color: var(--text); transform: none; }
+.tabActive { background: var(--accent) !important; color: #fff !important; box-shadow: 0 2px 8px rgba(29,158,117,0.3); }
+.tabIcon { font-size: 14px; }
+.tabBadge { background: rgba(255,255,255,0.3); color: inherit; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 99px; min-width: 18px; text-align: center; }
+.tabActive .tabBadge { background: rgba(255,255,255,0.25); }
+.content { animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 600px) { .main { padding: 1rem; } .brandSub { display: none; } .tab span:not(.tabIcon):not(.tabBadge) { display: none; } .tab { padding: 10px; } }
