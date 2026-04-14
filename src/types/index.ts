@@ -1,9 +1,9 @@
 export interface Teacher {
   id: string
   name: string
-  discipline: string
+  disciplines: string[]
   hourlyRate: number
-  duration: number // minutes per class
+  duration: number
   color: string
 }
 
@@ -11,12 +11,13 @@ export interface ScheduleSlot {
   day: string
   timeSlot: string
   teacherId: string
+  discipline?: string
 }
 
 export interface TeacherPayment {
   id: string
   name: string
-  discipline: string
+  disciplines: string[]
   color: string
   weeklyCl: number
   totalHours: number
